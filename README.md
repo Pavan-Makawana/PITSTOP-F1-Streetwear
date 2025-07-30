@@ -1,6 +1,6 @@
-# 🏁 F1-Store - Minimal E-Commerce Frontend
+# 🏁 PITSTOP- E-Commerce Frontend Website
 
-A PITSTOP, F1-inspired e-commerce frontend project for a streetwear brand.
+F1-inspired e-commerce frontend project for a streetwear brand.
 
 ## 💡 Features
 - Home page with featured products
