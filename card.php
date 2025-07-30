@@ -24,6 +24,7 @@
     main h2 {
       text-align: center;
       margin-bottom: 2rem;
+      margin-top: 3rem;
       color: #f9f5f5ff;
       font-family: 'Orbitron', sans-serif;
       font-size:3rem;

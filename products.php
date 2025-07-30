@@ -63,14 +63,16 @@
       font-size: 2rem;
       font-weight: bold;
       margin-bottom: 1rem;
-      margin-top: 1rem;
+      margin-top: 5rem;
       font-family: 'Orbitron', sans-serif;
     }
+
+    
 
     @media (min-width: 768px) {
       .section-title {
         font-size: 2.5rem;
-        margin-top: 1rem;
+        margin-top: 5rem;
       }
     }
 

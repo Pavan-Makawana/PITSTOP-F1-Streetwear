@@ -1,128 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<style>
-    .navbar {
-  background-color: #000;
-  padding: 1rem 1.5rem;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  border-bottom: 1px solid #2d2d2d;
-}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PITSTOP Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;600&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.navbar-container {
-  max-width: 1287px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+        #navbar{
+            position:fixed;
+            top:0;
+            z-index: 100;
+            width: -webkit-fill-available;
+            
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #111;
+            color: white;
+        }
 
-.navbar-logo {
-  font-size:  1.5rem;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: bold;
-  letter-spacing: -0.02em;
-  color: white;
-  text-decoration: none;
-}
+        nav {
+            background-color: #000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
 
-.navbar-logo .highlight {
-  color: #dc2626;
-}
+        .navbar-logo {
+            font-size: 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            letter-spacing: -0.02em;
+            color: white;
+            text-decoration: none;
+        }
 
-.navbar-links {
-  display: none;
-}
+        .navbar-logo .highlight {
+            color: #dc2626;
+        }
 
-.navbar-links a {
-  color: #d1d5db;
-  text-decoration: none;
-  margin-left: 2rem;
-  transition: color 0.3s ease;
-}
+        .nav-center {
+            display: flex;
+            gap: 2rem;
+        }
 
-.navbar-links a:hover {
-  color: #ffffff;
-}
+        .nav-center a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
 
-/* Icon styles */
-.navbar-icons {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+        .nav-center a:hover {
+            color: red;
+        }
 
-.icon-btn {
-  background: none;
-  border: none;
-  color: #d1d5db;
-  cursor: pointer;
-  padding: 0;
-  transition: color 0.3s ease;
-}
+        .cart-icon {
+            font-size: 1.3rem;
+            color: white;
+        }
 
-.icon-btn:hover {
-  color: #ffffff;
-}
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
 
-.icon-btn a img{
-  height: 50px;
-  width: 50px;
-}
+        .menu-toggle span {
+            background-color: white;
+            height: 3px;
+            margin: 4px 0;
+            width: 25px;
+            transition: all 0.3s;
+        }
 
-.icon-btn a img:hover{
- scale: 1.2;
-}
+        /* Responsive */
+        
+        @media (max-width: 768px) {
+            .nav-center {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: #000;
+                text-align: center;
+                display: none;
+            }
 
-.icon {
-  height: 1.5rem;
-  width: 1.5rem;
-}
+            .nav-center.active {
+                display: flex;
+            }
 
-/* Responsive */
-@media (min-width: 768px) {
-  .navbar-links {
-    display: flex;
-    gap: 2rem;
-  }
+            .menu-toggle {
+                display: flex;
+                position: absolute;
+                right: 10px;
+            }
 
-  .mobile-menu-btn {
-    display: none;
-  }
-}
-</style>
+            .cart-icon {
+                margin-left: 1rem;
+                margin-right: 31px;
+            }
 
+            nav {
+                flex-wrap: wrap;
+            }
+
+            .right-side {
+                display: flex;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
-<body>
 
-    <nav class="navbar">
-  <div class="navbar-container">
-    <a href="#" class="navbar-logo">
-      PITSTOP <span class="highlight">|</span>
-    </a>
-    <div class="navbar-links">
-      <a href="index.php">Shop</a>
-      <a href="category.php">Category</a>
-      <a href="login.php">Login</a>
+<body>
+    <div id="navbar">
+        <nav>
+            <a href="index.php" class="navbar-logo">
+                PITSTOP <span class="highlight">|</span>
+            </a>
+
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-center" id="nav-center">
+                <a href="index.php">Shop</a>
+                <a href="category.php">Category</a>
+                <a href="login.php">Login</a>
+            </div>
+
+            <div class="right-side">
+                <a href="card.php"><i class="fas fa-shopping-cart cart-icon"></i></a>
+            </div>
+        </nav>
     </div>
-    <div class="navbar-icons">
-      <button class="icon-btn">
-        <!-- Cart Icon -->
-        <a href="card.php"><img src="img/card.png" alt="" srcset=""></a>
-      </button>
-      <button class="icon-btn mobile-menu-btn">
-        <!-- Hamburger Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-    </div>
-  </div>
-</nav>
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const navCenter = document.getElementById('nav-center');
+
+        toggle.addEventListener('click', () => {
+            navCenter.classList.toggle('active');
+        });
+    </script>
+
 </body>
+
 </html>
