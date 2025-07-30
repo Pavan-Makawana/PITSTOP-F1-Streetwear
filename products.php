@@ -290,6 +290,9 @@
     <p id="noResults" style="display: none;">No products found.</p>
   </section>
 
+  <?php
+  require("footer.html");
+  ?>
   <!-- Scripts -->
   <script>
     function searchProducts() {
